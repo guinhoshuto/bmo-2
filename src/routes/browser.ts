@@ -7,19 +7,28 @@ const stagehand = new Stagehand({
 });
 
 const BrowserRoute: FastifyPluginAsync = async (server: FastifyInstance, options: FastifyPluginOptions) => {
-    server.get('/', async (request, reply) => {
+    server.get('/card', async (request, reply) => {
+        // if(!request.query.name) return reply.code(400).send({ error: "name query parameter is required" });
+        // const name = request.query.name;
+        const card = "Gecko Moria"
         await stagehand.init();
-        await stagehand.page.goto("https://github.com/browserbase/stagehand");
-        await stagehand.act({ action: "click on the contributors" });
-        const contributor = await stagehand.extract({
-            instruction: "extract the top contributor",
+        await stagehand.page.goto("https://ligaonepiece.com");
+        await stagehand.act({ action: "close popup" });
+        await stagehand.act({ action: `search for ${card} and hit enter` });
+        const cards = await stagehand.extract({
+            instruction: "extract the cards from the page",
             schema: z.object({
-                username: z.string(),
-                url: z.string(),
+                cards: z.array(z.object({
+                    name: z.string(),
+                    subtitle: z.string(),
+                    imageUrl: z.string(),
+                    lowerPrice: z.string(),
+                    higherPrice: z.string(),
+                }))
             }),
         });
-        console.log(`Our favorite contributor is ${contributor.username}`);
-        return reply.send({ hello: contributor.username });
+        console.log(`Found ${cards.cards.length} cards`);
+        return reply.send({ cards: cards.cards });
     })
 }
 

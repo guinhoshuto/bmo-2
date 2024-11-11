@@ -4,7 +4,9 @@ import BrowserRoute from './routes/browser';
 
 // const PORT = process.env.PORT || 3000;
 const PORT = 3000
-const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify();
+const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({
+  logger: true
+});
 server.register(BrowserRoute)
 
 const start = async () => {
