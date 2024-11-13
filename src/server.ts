@@ -1,13 +1,15 @@
 import { fastify, FastifyInstance } from 'fastify';
 import { IncomingMessage, Server, ServerResponse } from 'http';
 import BrowserRoute from './routes/browser';
+import ToolResearchRoute from './routes/tool-research';
 
 // const PORT = process.env.PORT || 3000;
 const PORT = 3000
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({
-  logger: true
+  logger: false
 });
 server.register(BrowserRoute)
+server.register(ToolResearchRoute)
 
 const start = async () => {
   try {

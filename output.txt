@@ -1,0 +1,172 @@
+
+> bmo-2@1.0.0 dev
+> ts-node-dev --respawn --transpile-only src/server.ts
+
+[INFO] 17:03:12 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.6.3)
+Server listening on port 3000
+[stagehand:Init] Launching local browser in headed mode
+[stagehand:Init] Local browser started successfully.
+[stagehand:extraction] starting extraction 'explain the product in few words'
+[stagehand:extraction] received output from processDom. Current chunk index: 0, Number of chunks left: 2
+[stagehand:extraction] received extraction response: {"desc":"Statuspage is the #1 status and incident communication tool, acquired by Atlassian in 2016.","metadata":{"progress":"Statuspage is a status and incident communication tool.","completed":true}}
+[stagehand:extraction] response: {"desc":"Statuspage is the #1 status and incident communication tool, acquired by Atlassian in 2016.","metadata":{"progress":"Statuspage is a status and incident communication tool.","completed":true}}
+[stagehand:Init] Launching local browser in headed mode
+[stagehand:Init] Local browser started successfully.
+[stagehand:observation] starting observation: look for pricing information
+[stagehand:observation] found element [{"description":"This is a link to the pricing page, which is relevant for observing pricing information.","selector":"xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]"},{"description":"This is the text associated with the pricing link, indicating the presence of pricing information.","selector":"xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]"}]
+[
+  {
+    description: 'This is a link to the pricing page, which is relevant for observing pricing information.',
+    selector: 'xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]'
+  },
+  {
+    description: 'This is the text associated with the pricing link, indicating the presence of pricing information.',
+    selector: 'xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]'
+  }
+]
+[stagehand:action] Running / Continuing action: click on pricing button on page: https://www.atlassian.com/software/statuspage
+[stagehand:action] Processing DOM...
+[stagehand:action] Looking at chunk 0. Chunks left: 9
+[stagehand:action] Received response from LLM: {"method":"click","element":18,"args":[],"step":"Clicked on the 'Pricing' button to navigate to the pricing page.","why":"The user's goal is to click on the pricing button, and this element matches the description of the pricing button.","completed":true}
+[stagehand:action] Executing method: click on element: 18 (xpath: /html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]) with args: []
+[stagehand:action] Page URL before action: https://www.atlassian.com/software/statuspage
+[stagehand:action] Clicking element, checking for page navigation
+[stagehand:action] Clicked element, no new tabs opened
+[stagehand:action] Network idle timeout hit
+[stagehand:action] Finished waiting for (possible) page navigation
+[stagehand:action] New page detected with URL: https://www.atlassian.com/software/statuspage/pricing
+[stagehand:action] Action marked as completed, Verifying if this is true...
+[stagehand:action] Error getting full page screenshot: page.screenshot: Target page, context or browser has been closed
+. Trying again...
+[stagehand:action] Error performing action (Retries: 0): page.screenshot: Target page, context or browser has been closed
+Trace: page.screenshot: Target page, context or browser has been closed
+    at _ScreenshotService.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:854:30)
+    at /Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:74:61
+    at __async (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:58:10)
+    at _ScreenshotService.getScreenshot (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:850:12)
+    at Stagehand.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1875:60)
+    at rejected (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:68:29)
+[stagehand:action] Running / Continuing action: click on pricing button on page: https://www.atlassian.com/software/statuspage/pricing
+[stagehand:dom] Error in waitForSettledDom: page.waitForSelector: Target page, context or browser has been closed
+Trace: page.waitForSelector: Target page, context or browser has been closed
+    at Stagehand.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1289:29)
+    at /Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:74:61
+    at __async (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:58:10)
+    at /Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1288:18
+    at Stagehand.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1305:14)
+    at /Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:74:61
+    at __async (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:58:10)
+    at Stagehand._waitForSettledDom (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1271:12)
+    at Stagehand.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1535:18)
+    at /Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:74:61
+    at __async (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:58:10)
+    at Stagehand._act (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1510:12)
+    at Stagehand.<anonymous> (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:1935:23)
+    at rejected (/Users/dlw/dev/bmo-2/node_modules/@browserbasehq/stagehand/dist/index.js:68:29)
+[stagehand:action] Processing DOM...
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:Init] Launching local browser in headed mode
+[stagehand:Init] Local browser started successfully.
+[stagehand:extraction] starting extraction 'explain the product in few words'
+[stagehand:extraction] received output from processDom. Current chunk index: 0, Number of chunks left: 2
+[stagehand:extraction] received extraction response: {"desc":"Statuspage is the #1 status and incident communication tool, acquired by Atlassian in 2016.","metadata":{"progress":"Statuspage is a status and incident communication tool by Atlassian.","completed":true}}
+[stagehand:extraction] response: {"desc":"Statuspage is the #1 status and incident communication tool, acquired by Atlassian in 2016.","metadata":{"progress":"Statuspage is a status and incident communication tool by Atlassian.","completed":true}}
+[stagehand:Init] Launching local browser in headed mode
+[stagehand:Init] Local browser started successfully.
+[stagehand:observation] starting observation: look for pricing information
+[stagehand:observation] found element [{"description":"A navigation link to the pricing page, which is relevant for observing pricing information.","selector":"xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]"},{"description":"The text 'Pricing' associated with the navigation link, indicating the presence of pricing information.","selector":"xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]"}]
+[
+  {
+    description: 'A navigation link to the pricing page, which is relevant for observing pricing information.',
+    selector: 'xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]'
+  },
+  {
+    description: "The text 'Pricing' associated with the navigation link, indicating the presence of pricing information.",
+    selector: 'xpath=/html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]'
+  }
+]
+[stagehand:action] Running / Continuing action: click on pricing button on page: https://www.atlassian.com/software/statuspage
+[stagehand:action] Processing DOM...
+[stagehand:action] Looking at chunk 0. Chunks left: 9
+[stagehand:action] Received response from LLM: {"method":"click","element":18,"args":[],"step":"Clicked on the 'Pricing' button to navigate to the pricing page.","why":"The user's goal is to click on the pricing button, and this element corresponds to that action.","completed":true}
+[stagehand:action] Executing method: click on element: 18 (xpath: /html/body[1]/header[1]/nav[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]) with args: []
+[stagehand:action] Page URL before action: https://www.atlassian.com/software/statuspage
+[stagehand:action] Clicking element, checking for page navigation
+[stagehand:action] Clicked element, no new tabs opened
+[stagehand:action] Finished waiting for (possible) page navigation
+[stagehand:action] New page detected with URL: https://www.atlassian.com/software/statuspage/pricing
+[stagehand:action] Action marked as completed, Verifying if this is true...
+[stagehand:action] Action completion verification result: true
+[stagehand:action] Action completed successfully
+[stagehand:extraction] starting extraction 'extract pricing information'
+[stagehand:extraction] received output from processDom. Current chunk index: 0, Number of chunks left: 5
+[stagehand:extraction] received extraction response: {"pricing":[{"plan":"Free","price":"Free","currency":"","description":"Our free plan gives you access to 100 subscribers, 25 components, two team members, two metrics, email notifications, Slack notifications, Microsoft Teams notifications, and access to REST APIs."},{"plan":"Hobby","price":"$29","currency":"USD","description":""},{"plan":"Startup","price":"$99","currency":"USD","description":""},{"plan":"Business","price":"$399","currency":"USD","description":""},{"plan":"Enterprise","price":"$1,499","currency":"USD","description":""}],"metadata":{"progress":"Extracted pricing information for Free, Hobby, Startup, Business, and Enterprise plans.","completed":true}}
+[stagehand:extraction] response: {"pricing":[{"plan":"Free","price":"Free","currency":"","description":"Our free plan gives you access to 100 subscribers, 25 components, two team members, two metrics, email notifications, Slack notifications, Microsoft Teams notifications, and access to REST APIs."},{"plan":"Hobby","price":"$29","currency":"USD","description":""},{"plan":"Startup","price":"$99","currency":"USD","description":""},{"plan":"Business","price":"$399","currency":"USD","description":""},{"plan":"Enterprise","price":"$1,499","currency":"USD","description":""}],"metadata":{"progress":"Extracted pricing information for Free, Hobby, Startup, Business, and Enterprise plans.","completed":true}}
+[stagehand:extraction] starting extraction 'explain the product in few words'
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:extraction] received output from processDom. Current chunk index: 0, Number of chunks left: 2
+[stagehand:extraction] received extraction response: {"desc":"Real-time visibility into critical apps and services all in one place.","metadata":{"progress":"Real-time visibility into critical apps and services.","completed":true}}
+[stagehand:extraction] response: {"desc":"Real-time visibility into critical apps and services all in one place.","metadata":{"progress":"Real-time visibility into critical apps and services.","completed":true}}
+[stagehand:Init] Launching local browser in headed mode
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:Init] Local browser started successfully.
+[stagehand:observation] starting observation: look for pricing information
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:observation] found element [{"description":"A list item with the text 'Pricing'.","selector":"xpath=/html/body[1]/nav[1]/ul[1]/li[3]"},{"description":"A link with the text 'Pricing' that navigates to the pricing page.","selector":"xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]"},{"description":"A span element with the text 'Pricing'.","selector":"xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]/div[1]/span[1]"},{"description":"Text node with the word 'Pricing'.","selector":"xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]/div[1]/span[1]"}]
+[
+  {
+    description: "A list item with the text 'Pricing'.",
+    selector: 'xpath=/html/body[1]/nav[1]/ul[1]/li[3]'
+  },
+  {
+    description: "A link with the text 'Pricing' that navigates to the pricing page.",
+    selector: 'xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]'
+  },
+  {
+    description: "A span element with the text 'Pricing'.",
+    selector: 'xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]/div[1]/span[1]'
+  },
+  {
+    description: "Text node with the word 'Pricing'.",
+    selector: 'xpath=/html/body[1]/nav[1]/ul[1]/li[3]/a[1]/div[1]/span[1]'
+  }
+]
+[stagehand:action] Running / Continuing action: click on pricing button on page: https://www.pagerduty.com/
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:action] Processing DOM...
+[stagehand:action] Looking at chunk 0. Chunks left: 9
+[stagehand:action] Received response from LLM: {"method":"click","element":21,"args":[],"step":"Clicked on the 'Pricing' link to navigate to the pricing page.","why":"The user's goal is to click on the pricing button, and this link is labeled as 'Pricing', which matches the user's goal.","completed":true}
+[stagehand:action] Executing method: click on element: 21 (xpath: /html/body[1]/nav[1]/ul[1]/li[3]/a[1]) with args: []
+[stagehand:action] Page URL before action: https://www.pagerduty.com/
+[stagehand:action] Clicking element, checking for page navigation
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:action] Clicked element, no new tabs opened
+[stagehand:action] Finished waiting for (possible) page navigation
+[stagehand:action] New page detected with URL: https://www.pagerduty.com/pricing/incident-management/
+[stagehand:action] Action marked as completed, Verifying if this is true...
+[stagehand:action] Action completion verification result: true
+[stagehand:action] Action completed successfully
+[stagehand:extraction] starting extraction 'extract pricing information'
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:extraction] received output from processDom. Current chunk index: 0, Number of chunks left: 12
+[stagehand:extraction] received extraction response: {"pricing":[{"plan":"AIOps","price":"","currency":"","description":""},{"plan":"Automation","price":"","currency":"","description":""},{"plan":"Incident Management","price":"","currency":"","description":""}],"metadata":{"progress":"Pricing plans extracted but missing price, currency, and description details.","completed":false}}
+[stagehand:extraction] continuing extraction, progress: 'Pricing plans extracted but missing price, currency, and description details.'
+[stagehand:extraction] starting extraction 'extract pricing information'
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:dom] DOM settle timeout of 60000ms exceeded, continuing anyway
+[stagehand:extraction] received output from processDom. Current chunk index: 1, Number of chunks left: 11
+[stagehand:extraction] received extraction response: {"pricing":[{"plan":"AIOps","price":"","currency":"","description":""},{"plan":"Automation","price":"","currency":"","description":""},{"plan":"Incident Management","price":"","currency":"","description":""},{"plan":"Free","price":"0","currency":"$","description":"Start with on-call and incident response for small teams."},{"plan":"Professional","price":"21","currency":"$","description":"On-call and incident response for growing teams."},{"plan":"Business","price":"41","currency":"$","description":"Advanced incident response for modern operations teams."},{"plan":"Enterprise","price":"Call Us","currency":"","description":"End-to-end incident management for the entire lifecycle."}],"metadata":{"progress":"Extracted pricing information for plans: Free, Professional, Business, and Enterprise.","completed":true}}
+[stagehand:extraction] response: {"pricing":[{"plan":"AIOps","price":"","currency":"","description":""},{"plan":"Automation","price":"","currency":"","description":""},{"plan":"Incident Management","price":"","currency":"","description":""},{"plan":"Free","price":"0","currency":"$","description":"Start with on-call and incident response for small teams."},{"plan":"Professional","price":"21","currency":"$","description":"On-call and incident response for growing teams."},{"plan":"Business","price":"41","currency":"$","description":"Advanced incident response for modern operations teams."},{"plan":"Enterprise","price":"Call Us","currency":"","description":"End-to-end incident management for the entire lifecycle."}],"metadata":{"progress":"Extracted pricing information for plans: Free, Professional, Business, and Enterprise.","completed":true}}
